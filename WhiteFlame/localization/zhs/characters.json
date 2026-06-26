@@ -1,0 +1,21 @@
+{
+  "WHITE_FLAME_CHARACTER_WHITE_FLAME_CHARACTER.title": "纯白焰火",
+  "WHITE_FLAME_CHARACTER_WHITE_FLAME_CHARACTER.titleObject": "纯白焰火",
+  "WHITE_FLAME_CHARACTER_WHITE_FLAME_CHARACTER.description": "前来清洗一切罪恶的白焰",
+  "WHITE_FLAME_CHARACTER_WHITE_FLAME_CHARACTER.pronounObject": "她",
+  "WHITE_FLAME_CHARACTER_WHITE_FLAME_CHARACTER.possessiveAdjective": "她的",
+  "WHITE_FLAME_CHARACTER_WHITE_FLAME_CHARACTER.pronounPossessive": "她的",
+  "WHITE_FLAME_CHARACTER_WHITE_FLAME_CHARACTER.pronounSubject": "她",
+  "WHITE_FLAME_CHARACTER_WHITE_FLAME_CHARACTER.cardsModifierTitle": "纯白焰火的卡牌",
+  "WHITE_FLAME_CHARACTER_WHITE_FLAME_CHARACTER.cardsModifierDescription": "纯白焰火的卡牌将出现在商店与奖励中",
+  "WHITE_FLAME_CHARACTER_WHITE_FLAME_CHARACTER.aromaPrinciple": "[sine][pink]纯白焰火[/pink][/sine]",
+  "WHITE_FLAME_CHARACTER_WHITE_FLAME_CHARACTER.eventDeathPrevention": "还是做不到吗...卡莉...",
+  "WHITE_FLAME_CHARACTER_WHITE_FLAME_CHARACTER.banter.alive.endTurnPing": "时间紧迫。",
+  "WHITE_FLAME_CHARACTER_WHITE_FLAME_CHARACTER.banter.dead.endTurnPing": "...",
+  "WHITE_FLAME_CHARACTER_WHITE_FLAME_CHARACTER.goldMonologue": "这个很有用",
+  "WHITE_FLAME_CHARACTER_WHITE_FLAME_CHARACTER.unlockText": "进行一局游戏来解锁这个角色。",
+  "WHITE_FLAME_CHARACTER_WHITE_FLAME_CHARACTER.flavor": "白焰之中，罪恶无从遁形。",
+  "WHITE_FLAME_CHARACTER_WHITE_FLAME_CHARACTER.selectMessage": "巴别塔之刃，拥有纯白焰火之名的少女。",
+  "WHITE_FLAME_CHARACTER_WHITE_FLAME_CHARACTER.victoryMessage": "白焰淨化了一切罪孽。",
+  "WHITE_FLAME_CHARACTER_WHITE_FLAME_CHARACTER.defeatMessage": "白焰熄灭了……"
+}

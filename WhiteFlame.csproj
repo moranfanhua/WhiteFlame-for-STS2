@@ -1,0 +1,81 @@
+<Project Sdk="Godot.NET.Sdk/4.5.1">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework Condition=" '$(GodotTargetPlatform)' == 'android' ">net9.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ExportDebug|AnyCPU'">
+    <Optimize>True</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ExportRelease|AnyCPU'">
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="WhiteFlame\Images\Cards\BeyondTheTime.png" />
+    <Content Include="WhiteFlame\Images\Cards\EscapeFromCage.png" />
+    <Content Include="WhiteFlame\Images\Cards\HelpOfSepia.png" />
+    <Content Include="WhiteFlame\Images\Cards\PhoenixKit.png" />
+    <Content Include="WhiteFlame\Images\Cards\RatherBeShatteredJade.png" />
+    <Content Include="WhiteFlame\Images\Cards\TideOfSepia.png" />
+    <Content Include="WhiteFlame\Images\energy_whiteflame_big.png" />
+    <Content Include="WhiteFlame\Images\energy_whiteflame.png" />
+    <Content Include="WhiteFlame\Images\Cards\BurnItAllDown.png" />
+    <Content Include="WhiteFlame\Images\Cards\FactorBurst.png" />
+    <Content Include="WhiteFlame\Images\Cards\LastShot.png" />
+    <Content Include="WhiteFlame\Images\Cards\RmAshlia.png" />
+    <Content Include="WhiteFlame\Images\Cards\RmIcyStorm.png" />
+    <Content Include="WhiteFlame\Images\Cards\RmIdiotScion.png" />
+    <Content Include="WhiteFlame\Images\Cards\RmIronLord.png" />
+    <Content Include="WhiteFlame\Images\Cards\RmShadowOfAshlia.png" />
+    <Content Include="WhiteFlame\Images\Cards\SheildBattery.png" />
+    <Content Include="WhiteFlame\Images\Cards\SheildCell.png" />
+    <Content Include="WhiteFlame\Images\Cards\WhiteFlameStrike.png" />
+    <Content Include="WhiteFlame\Images\Cards\WhiteFlameRise.png" />
+    <Content Include="WhiteFlame\Images\Cards\WhiteFlameDefend.png" />
+    <Content Include="WhiteFlame\Images\Powers\RatherBeShatteredJadePower.png" />
+    <Content Include="WhiteFlame\Images\Powers\HelpOfSepiaPower.png" />
+    <Content Include="WhiteFlame\Images\Powers\SelfDestroyPower.png" />
+    <Content Include="WhiteFlame\Images\Powers\RecallingMemoryPower.png" />
+    <Content Include="WhiteFlame\Images\Powers\LyticFactorPower.png" />
+    <Content Include="WhiteFlame\Images\Powers\LastShotPower.png" />
+    <Content Include="WhiteFlame\Images\Relics\Balisong.png" />
+    <Content Include="WhiteFlame\Images\Relics\FactorBalisong.png" />
+    <Content Include="WhiteFlame\Images\xbh\WhiteFlameSelectLocked.png" />
+    <Content Include="WhiteFlame\Images\xbh\WhiteFlameSelect.png" />
+    <Content Include="WhiteFlame\localization\zhs\cards.json" />
+    <Content Include="WhiteFlame\localization\zhs\card_keywords.json" />
+    <Content Include="WhiteFlame\localization\zhs\characters.json" />
+    <Content Include="WhiteFlame\localization\zhs\powers.json" />
+    <Content Include="WhiteFlame\localization\zhs\relics.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- RitsuLib Framework - 通过 NuGet 自动管理 -->
+    <PackageReference Include="STS2.RitsuLib" Version="0.4.*" />
+
+    <!-- Roslyn 源码分析器，用于模组 API 验证 -->
+    <PackageReference Include="Nothing.STS2RitsuLib.ModAnalyzers" Version="0.8.*">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="GodotSharp">
+      <HintPath>GodotSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="sts2">
+      <HintPath>sts2.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="WhiteFlame\Scenes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="WhiteFlame\Images\xbh\WhiteFlameIcon.svg" />
+  </ItemGroup>
+</Project>

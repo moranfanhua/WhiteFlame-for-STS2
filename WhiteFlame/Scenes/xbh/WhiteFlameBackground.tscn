@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cncn0ttijvw16"]
+
+[ext_resource type="Texture2D" uid="uid://dxrrdbsvmkdog" path="res://WhiteFlame/Scenes/xbh/1775562131.png" id="1_uiciq"]
+[ext_resource type="Texture2D" uid="uid://0m3w8tsw4oxq" path="res://WhiteFlame/Scenes/xbh/图层 0.png" id="2_knfi0"]
+
+[node name="CharSelectBgWhiteFlame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="1775562131" type="Sprite2D" parent="."]
+position = Vector2(1242.0001, 619)
+scale = Vector2(1.1579158, 1.229526)
+texture = ExtResource("1_uiciq")
+
+[node name="图层0" type="Sprite2D" parent="."]
+position = Vector2(1454, 738)
+scale = Vector2(0.85746604, 0.8574661)
+texture = ExtResource("2_knfi0")

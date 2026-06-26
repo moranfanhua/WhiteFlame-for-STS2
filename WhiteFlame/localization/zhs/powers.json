@@ -1,0 +1,23 @@
+{
+  "WHITE_FLAME_POWER_LYTIC_FACTOR_POWER.title": "裂解因子",
+  "WHITE_FLAME_POWER_LYTIC_FACTOR_POWER.description": "每次受到攻击时，额外受到1点伤害",
+  "WHITE_FLAME_POWER_LYTIC_FACTOR_POWER.smartDescription": "每次受到攻击时，额外受到{Amount}点伤害",
+  "WHITE_FLAME_POWER_LAST_SHOT_POWER.title": "破釜沉舟",
+  "WHITE_FLAME_POWER_LAST_SHOT_POWER.description": "在每回合开始时，获得1层自毁",
+  "WHITE_FLAME_POWER_LAST_SHOT_POWER.smartDescription": "在每回合开始时，获得{Amount}层自毁",
+  "WHITE_FLAME_POWER_SELF_DESTORY_POWER.title": "自毁",
+  "WHITE_FLAME_POWER_SELF_DESTORY_POWER.description": "在每回合开始时，失去1点生命",
+  "WHITE_FLAME_POWER_SELF_DESTORY_POWER.smartDescription": "在每回合开始时，失去{Amount}点生命",
+  "WHITE_FLAME_POWER_RECALLING_MEMORY_POWER.title": "追忆",
+  "WHITE_FLAME_POWER_RECALLING_MEMORY_POWER.description": "基于此效果层数，强化追忆系列卡牌的效果。回合结束时，减少1/3的层数（向下取整），最大30层。",
+  "WHITE_FLAME_POWER_RECALLING_MEMORY_POWER.smartDescription": "基于此效果层数，强化追忆系列卡牌的效果。回合结束时，减少1/3的层数（向下取整），最大30层。",
+  "WHITE_FLAME_POWER_RATHER_BE_SHATTERED_JADE_POWER.title": "宁为玉碎",
+  "WHITE_FLAME_POWER_RATHER_BE_SHATTERED_JADE_POWER.description": "在战斗结束时，你可以从你的牌组中选一张牌移除并回复 20 点生命",
+  "WHITE_FLAME_POWER_RATHER_BE_SHATTERED_JADE_POWER.smartDescription": "在战斗结束时，你可以从你的牌组中选一张牌移除并回复 20 点生命",
+  "WHITE_FLAME_POWER_DESPISE_OF_SEPIA_POWER.title": "墨之轻蔑",
+  "WHITE_FLAME_POWER_DESPISE_OF_SEPIA_POWER.description": "每当你生成 3 张牌，获得 2 点能量。",
+  "WHITE_FLAME_POWER_DESPISE_OF_SEPIA_POWER.smartDescription": "每当你生成 3 张牌，获得 2 点能量。",
+  "WHITE_FLAME_POWER_HELP_OF_SEPIA_POWER.title": "墨之助",
+  "WHITE_FLAME_POWER_HELP_OF_SEPIA_POWER.description": "每当你消耗牌时，额外将一张该牌的复制品置入消耗牌堆。",
+  "WHITE_FLAME_POWER_HELP_OF_SEPIA_POWER.smartDescription": "每当你消耗牌时，额外将一张该牌的复制品置入消耗牌堆。"
+}

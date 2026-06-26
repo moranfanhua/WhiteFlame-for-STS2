@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://mcckutvim4ht"]
+
+[ext_resource type="Texture2D" uid="uid://0m3w8tsw4oxq" path="res://WhiteFlame/Scenes/xbh/图层 0.png" id="1_s3qk6"]
+
+[node name="WhiteFlameVisual" type="Node2D"]
+
+[node name="Bounds" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -248.0
+offset_top = 104.0
+offset_right = 140.32501
+offset_bottom = 155.0
+
+[node name="IntentPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-48, -294)
+
+[node name="CenterPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-33, -224)
+
+[node name="Visuals" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-61.00001, -194.53699)
+scale = Vector2(0.5007542, 0.5007542)
+texture = ExtResource("1_s3qk6")
