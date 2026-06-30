@@ -7,16 +7,23 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using STS2RitsuLib.Keywords;
+using STS2RitsuLib.Models.Capabilities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using WhiteFlame.WhiteFlameCode.Abstracts;
+using WhiteFlame.WhiteFlameCode.Capabilities;
 using WhiteFlame.WhiteFlameCode.Cards.Keywords;
 using WhiteFlame.WhiteFlameCode.Powers;
 
 namespace WhiteFlame.WhiteFlameCode.Cards;
 
-public class RmIronLord() : WhiteFlameCardTemplate(3, CardType.Power, CardRarity.Uncommon, TargetType.Self)
+public class RmIronLord() : WhiteFlameCardTemplate(3, CardType.Power, CardRarity.Uncommon, TargetType.Self), IModelCapabilitySource
 {
+    public void BuildDefaultCapabilities(ModelCapabilityList capabilities)
+    {
+        capabilities.Add<RecallingMemoryCardPlayCapability>();
+    }
+
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new PowerVar<RecallingMemoryPower>(1m),
         new CalculationBaseVar(15m),
@@ -34,7 +41,6 @@ public class RmIronLord() : WhiteFlameCardTemplate(3, CardType.Power, CardRarity
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await PowerCmd.Apply<PlatingPower>(choiceContext, base.Owner.Creature, this.DynamicVars["GetPlatingPower"].PreviewValue, base.Owner.Creature, this);
-        await PowerCmd.Apply<RecallingMemoryPower>(choiceContext, base.Owner.Creature, base.DynamicVars["RecallingMemoryPower"].BaseValue, base.Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

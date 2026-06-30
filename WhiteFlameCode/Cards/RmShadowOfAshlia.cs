@@ -7,17 +7,24 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using STS2RitsuLib.Keywords;
+using STS2RitsuLib.Models.Capabilities;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WhiteFlame.WhiteFlameCode.Abstracts;
+using WhiteFlame.WhiteFlameCode.Capabilities;
 using WhiteFlame.WhiteFlameCode.Cards.Keywords;
 using WhiteFlame.WhiteFlameCode.Powers;
 
 namespace WhiteFlame.WhiteFlameCode.Cards;
 
-public class RmShadowOfAshlia() : WhiteFlameCardTemplate(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+public class RmShadowOfAshlia() : WhiteFlameCardTemplate(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self), IModelCapabilitySource
 {
+    public void BuildDefaultCapabilities(ModelCapabilityList capabilities)
+    {
+        capabilities.Add<RecallingMemoryCardPlayCapability>();
+    }
+
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new PowerVar<RecallingMemoryPower>(1m),
         new CardsVar(2),
@@ -54,6 +61,5 @@ public class RmShadowOfAshlia() : WhiteFlameCardTemplate(0, CardType.Skill, Card
         }
 
         await CardPileCmd.Draw(choiceContext, this.DynamicVars["DrawCards"].PreviewValue, base.Owner);
-        await PowerCmd.Apply<RecallingMemoryPower>(choiceContext, base.Owner.Creature, base.DynamicVars["RecallingMemoryPower"].BaseValue, base.Owner.Creature, this);
     }
 }

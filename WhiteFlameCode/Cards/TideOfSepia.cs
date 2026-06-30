@@ -5,16 +5,23 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.CommonUi;
 using STS2RitsuLib.Keywords;
+using STS2RitsuLib.Models.Capabilities;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WhiteFlame.WhiteFlameCode.Abstracts;
+using WhiteFlame.WhiteFlameCode.Capabilities;
 using WhiteFlame.WhiteFlameCode.Cards.Keywords;
 
 namespace WhiteFlame.WhiteFlameCode.Cards;
 
-public class TideOfSepia() : WhiteFlameCardTemplate(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+public class TideOfSepia() : WhiteFlameCardTemplate(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self), IModelCapabilitySource
 {
+    public void BuildDefaultCapabilities(ModelCapabilityList capabilities)
+    {
+        capabilities.Add<ImmortalCardCapability>();
+    }
+
     public override IEnumerable<CardKeyword> CanonicalKeywords => [WhiteFlameKeywords.Immortal.GetModCardKeyword()];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -28,13 +35,5 @@ public class TideOfSepia() : WhiteFlameCardTemplate(1, CardType.Skill, CardRarit
         }
 
         await CardPileCmd.AddGeneratedCardsToCombat(cards, PileType.Hand, base.Owner);
-    }
-
-    public override async Task AfterCardExhausted(PlayerChoiceContext choiceContext, CardModel card, bool causedByEthereal)
-    {
-        if (card == this)
-        {
-            await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, base.Owner);
-        }
     }
 }

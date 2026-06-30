@@ -7,21 +7,28 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using STS2RitsuLib.Keywords;
+using STS2RitsuLib.Models.Capabilities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using WhiteFlame.WhiteFlameCode.Abstracts;
+using WhiteFlame.WhiteFlameCode.Capabilities;
 using WhiteFlame.WhiteFlameCode.Cards.Keywords;
 using WhiteFlame.WhiteFlameCode.Powers;
 
 namespace WhiteFlame.WhiteFlameCode.Cards;
 
-public class RmIronRampart() : WhiteFlameCardTemplate(1, CardType.Skill, CardRarity.Common, TargetType.Self)
+public class RmIronRampart() : WhiteFlameCardTemplate(1, CardType.Skill, CardRarity.Common, TargetType.Self), IModelCapabilitySource
 {
+    public void BuildDefaultCapabilities(ModelCapabilityList capabilities)
+    {
+        capabilities.Add<RecallingMemoryCardPlayCapability>();
+    }
+
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new BlockVar(7, ValueProp.Move),
         new PowerVar<RecallingMemoryPower>(1m),
         new CalculationBaseVar(0m),
-        new ExtraBlockVar(1m),
+        new CalculationExtraVar(1m),
         new CalculatedBlockVar(ValueProp.Move).WithMultiplier((CardModel card, Creature? _) => card.Owner.Creature.GetPowerAmount<RecallingMemoryPower>() / 5)
     ];
 
@@ -35,8 +42,8 @@ public class RmIronRampart() : WhiteFlameCardTemplate(1, CardType.Skill, CardRar
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await CreatureCmd.GainBlock(base.Owner.Creature, base.DynamicVars.CalculatedBlock, cardPlay);
-        await PowerCmd.Apply<RecallingMemoryPower>(choiceContext, base.Owner.Creature, base.DynamicVars["RecallingMemoryPower"].BaseValue, base.Owner.Creature, this);
+        decimal block = ((CalculatedVar)DynamicVars["CalculatedBlock"]).Calculate(null);
+        await CreatureCmd.GainBlock(base.Owner.Creature, block, ValueProp.Move, cardPlay);
     }
 
     protected override void OnUpgrade()

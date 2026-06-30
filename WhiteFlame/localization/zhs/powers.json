@@ -19,5 +19,14 @@
   "WHITE_FLAME_POWER_DESPISE_OF_SEPIA_POWER.smartDescription": "每当你生成 3 张牌，获得 2 点能量。",
   "WHITE_FLAME_POWER_HELP_OF_SEPIA_POWER.title": "墨之助",
   "WHITE_FLAME_POWER_HELP_OF_SEPIA_POWER.description": "每当你消耗牌时，额外将一张该牌的复制品置入消耗牌堆。",
-  "WHITE_FLAME_POWER_HELP_OF_SEPIA_POWER.smartDescription": "每当你消耗牌时，额外将一张该牌的复制品置入消耗牌堆。"
+  "WHITE_FLAME_POWER_HELP_OF_SEPIA_POWER.smartDescription": "每当你消耗牌时，额外将一张该牌的复制品置入消耗牌堆。",
+  "WHITE_FLAME_POWER_SEPIA_VEIN_POWER.title": "墨之脉动",
+  "WHITE_FLAME_POWER_SEPIA_VEIN_POWER.description": "每当你消耗牌时，随机将手牌中一张牌的费用在本回合中降低 1 点。",
+  "WHITE_FLAME_POWER_SEPIA_VEIN_POWER.smartDescription": "每当你消耗牌时，随机将手牌中一张牌的费用在本回合中降低 {Amount} 点。",
+  "WHITE_FLAME_POWER_FUTURE_DEBT_POWER.title": "透支未来",
+  "WHITE_FLAME_POWER_FUTURE_DEBT_POWER.description": "每次受到攻击伤害时，额外受到等同层数的伤害。",
+  "WHITE_FLAME_POWER_FUTURE_DEBT_POWER.smartDescription": "每次受到攻击伤害时，额外受到{Amount}点伤害。",
+  "WHITE_FLAME_POWER_LYTIC_MATRIX_POWER.title": "裂解矩阵",
+  "WHITE_FLAME_POWER_LYTIC_MATRIX_POWER.description": "你给予的裂解因子层数增加1层。",
+  "WHITE_FLAME_POWER_LYTIC_MATRIX_POWER.smartDescription": "你给予的裂解因子层数增加{Amount}层。"
 }

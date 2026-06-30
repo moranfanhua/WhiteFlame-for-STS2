@@ -9,14 +9,21 @@ using MegaCrit.Sts2.Core.ValueProps;
 using STS2RitsuLib.Keywords;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using STS2RitsuLib.Models.Capabilities;
 using WhiteFlame.WhiteFlameCode.Abstracts;
+using WhiteFlame.WhiteFlameCode.Capabilities;
 using WhiteFlame.WhiteFlameCode.Cards.Keywords;
 using WhiteFlame.WhiteFlameCode.Powers;
 
 namespace WhiteFlame.WhiteFlameCode.Cards;
 
-public class RmKers() : WhiteFlameCardTemplate(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+public class RmKers() : WhiteFlameCardTemplate(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy), IModelCapabilitySource
 {
+    public void BuildDefaultCapabilities(ModelCapabilityList capabilities)
+    {
+        capabilities.Add<RecallingMemoryCardPlayCapability>();
+    }
+
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DamageVar(6, ValueProp.Unpowered | ValueProp.Move),
         new PowerVar<RecallingMemoryPower>(1m),
@@ -39,7 +46,6 @@ public class RmKers() : WhiteFlameCardTemplate(1, CardType.Attack, CardRarity.Co
             .FromCard(this)
             .Targeting(cardPlay.Target!)
             .Execute(choiceContext);
-        await PowerCmd.Apply<RecallingMemoryPower>(choiceContext, base.Owner.Creature, base.DynamicVars["RecallingMemoryPower"].BaseValue, base.Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

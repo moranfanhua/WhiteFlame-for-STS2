@@ -1,6 +1,7 @@
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Modding;
 using STS2RitsuLib;
+using STS2RitsuLib.Interop;
 using STS2RitsuLib.Patching.Core;
 using STS2RitsuLib.Scaffolding.Content;
 using System.Reflection;
@@ -21,6 +22,7 @@ public class Entry
         var assembly = Assembly.GetExecutingAssembly();
 
         RitsuLibFramework.EnsureGodotScriptsRegistered(assembly, Logger);
+        ModTypeDiscoveryHub.RegisterModAssembly(ModId, assembly);
 
         RitsuLibFramework.CreateContentPack(ModId)
             .Character<WhiteFlameCharacter>(entry => entry
