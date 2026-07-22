@@ -17,7 +17,7 @@ using WhiteFlame.WhiteFlameCode.Powers;
 
 namespace WhiteFlame.WhiteFlameCode.Cards;
 
-public class RmAshlia() : WhiteFlameCardTemplate(1, CardType.Attack, CardRarity.Token, TargetType.AnyEnemy), IModelCapabilitySource
+public class RmAshlia() : WhiteFlameTokenCardTemplate(1, CardType.Attack, CardRarity.Token, TargetType.AnyEnemy), IModelCapabilitySource
 {
     public void BuildDefaultCapabilities(ModelCapabilityList capabilities)
     {
