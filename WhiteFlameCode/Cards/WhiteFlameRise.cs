@@ -22,7 +22,7 @@ public class WhiteFlameRise() : WhiteFlameCardTemplate(3, CardType.Attack, CardR
         new RepeatVar(2),
         new CalculationBaseVar(0m),
         new CalculationExtraVar(1m),
-        new CalculatedVar("CalculatedHits").WithMultiplier((CardModel card, Creature? _) => GetExhausts(card.Owner).Count())
+        new CalculatedVar("CalculatedHits").WithMultiplier((CardModel card, Creature _) => GetExhausts(card.Owner).Count())
     ];
 
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
@@ -34,7 +34,7 @@ public class WhiteFlameRise() : WhiteFlameCardTemplate(3, CardType.Attack, CardR
         int exhaustCount = (int)((CalculatedVar)DynamicVars["CalculatedHits"]).Calculate(cardPlay.Target);
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .WithHitCount(DynamicVars.Repeat.IntValue * exhaustCount)
-            .FromCard(this)
+            .FromCard(this,cardPlay)
             .TargetingRandomOpponents(CombatState)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);

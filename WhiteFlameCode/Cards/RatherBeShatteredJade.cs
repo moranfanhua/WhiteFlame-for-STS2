@@ -25,7 +25,7 @@ public class RatherBeShatteredJade() : WhiteFlameCardTemplate(1, CardType.Power,
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await PowerCmd.Apply<RatherBeShatteredJadePower>(choiceContext, base.Owner.Creature, base.DynamicVars["RatherBeShatteredJadePower"].BaseValue, base.Owner.Creature, this);
-        await CreatureCmd.Damage(choiceContext, base.Owner.Creature, base.DynamicVars.HpLoss.BaseValue, ValueProp.Unblockable | ValueProp.Unpowered | ValueProp.Move, this);
+        await CreatureCmd.Damage(choiceContext, base.Owner.Creature, base.DynamicVars.HpLoss.BaseValue, ValueProp.Unblockable | ValueProp.Unpowered | ValueProp.Move, this, cardPlay);
     }
 
     protected override void OnUpgrade()

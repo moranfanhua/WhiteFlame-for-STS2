@@ -13,13 +13,13 @@ namespace WhiteFlame.WhiteFlameCode.Cards;
 public class PhoenixRebirth() : WhiteFlameCardTemplate(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new HpLossVar(5m),
+        new DamageVar(5m,ValueProp.Unpowered | ValueProp.Move),
         new HealVar(5m)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await CreatureCmd.Damage(choiceContext, base.Owner.Creature, base.DynamicVars.HpLoss.BaseValue, ValueProp.Unpowered | ValueProp.Move, this);
+        await CreatureCmd.Damage(choiceContext, base.Owner.Creature, base.DynamicVars.Damage.BaseValue,ValueProp.Unpowered | ValueProp.Move, this, cardPlay);
         await CreatureCmd.Heal(base.Owner.Creature, base.DynamicVars.Heal.BaseValue);
     }
 

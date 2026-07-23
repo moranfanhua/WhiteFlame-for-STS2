@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using System.Threading.Tasks;
 using WhiteFlame.WhiteFlameCode.Abstracts;
+using MegaCrit.Sts2.Core.Models;
 
 namespace WhiteFlame.WhiteFlameCode.Powers;
 

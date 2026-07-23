@@ -18,7 +18,7 @@ public sealed class SelfDestroyPower : WhiteFlamePowerTemplate
         if (player == base.Owner.Player)
         {
             Flash();
-            await CreatureCmd.Damage(choiceContext, base.Owner, base.Amount, ValueProp.Move, base.Owner, null);
+            await CreatureCmd.Damage(choiceContext, base.Owner, base.Amount, ValueProp.Move, null, null);
         }
     }
 }

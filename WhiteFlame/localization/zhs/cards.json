@@ -74,7 +74,7 @@
   "WHITE_FLAME_CARD_FACTOR_REVERSAL.title": "因子逆转",
   "WHITE_FLAME_CARD_FACTOR_REVERSAL.description": "目标身上裂解因子层数翻倍。{IfUpgraded:show:|消耗。}",
   "WHITE_FLAME_CARD_PHOENIX_REBIRTH.title": "浴火重生",
-  "WHITE_FLAME_CARD_PHOENIX_REBIRTH.description": "受到 5 点伤害，回复 5 点生命。",
+  "WHITE_FLAME_CARD_PHOENIX_REBIRTH.description": "受到 {Damage:diff()} 点伤害，回复 {Heal:diff()} 点生命。",
   "WHITE_FLAME_CARD_FUTURE_DEBT.title": "透支未来",
   "WHITE_FLAME_CARD_FUTURE_DEBT.description": "本回合所有牌耗能-1。每次受到攻击伤害时，额外受到{IfUpgraded:show:2|3}点伤害。"
 }

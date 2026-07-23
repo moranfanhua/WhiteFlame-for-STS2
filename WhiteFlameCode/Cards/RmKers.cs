@@ -29,7 +29,7 @@ public class RmKers() : WhiteFlameCardTemplate(1, CardType.Attack, CardRarity.Co
         new PowerVar<RecallingMemoryPower>(1m),
         new CalculationBaseVar(0m),
         new ExtraDamageVar(2m),
-        new CalculatedDamageVar(ValueProp.Unpowered | ValueProp.Move).WithMultiplier((CardModel card, Creature? _) => card.Owner.Creature.GetPowerAmount<RecallingMemoryPower>() / 6)
+        new CalculatedDamageVar(ValueProp.Unpowered | ValueProp.Move).WithMultiplier((CardModel card, Creature _) => card.Owner.Creature.GetPowerAmount<RecallingMemoryPower>() / 6)
     ];
 
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
@@ -43,7 +43,7 @@ public class RmKers() : WhiteFlameCardTemplate(1, CardType.Attack, CardRarity.Co
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await DamageCmd.Attack(DynamicVars.CalculatedDamage)
-            .FromCard(this)
+            .FromCard(this,cardPlay)
             .Targeting(cardPlay.Target!)
             .Execute(choiceContext);
     }

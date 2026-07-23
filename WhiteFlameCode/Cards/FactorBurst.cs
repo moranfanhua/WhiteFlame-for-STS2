@@ -18,7 +18,7 @@ public class FactorBurst() : WhiteFlameCardTemplate(1, CardType.Attack, CardRari
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new CalculationBaseVar(6m),
         new ExtraDamageVar(2m),
-        new CalculatedDamageVar(ValueProp.Move).WithMultiplier((CardModel _, Creature? target) => target?.GetPowerAmount<LyticFactorPower>() ?? 0)
+        new CalculatedDamageVar(ValueProp.Move).WithMultiplier((CardModel _, Creature target) => target?.GetPowerAmount<LyticFactorPower>() ?? 0)
     ];
 
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
@@ -28,7 +28,7 @@ public class FactorBurst() : WhiteFlameCardTemplate(1, CardType.Attack, CardRari
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await DamageCmd.Attack(DynamicVars.CalculatedDamage)
-            .FromCard(this)
+            .FromCard(this,cardPlay)
             .Targeting(cardPlay.Target!)
             .Execute(choiceContext);
     }

@@ -29,7 +29,7 @@ public class RmIronRampart() : WhiteFlameCardTemplate(1, CardType.Skill, CardRar
         new PowerVar<RecallingMemoryPower>(1m),
         new CalculationBaseVar(0m),
         new CalculationExtraVar(1m),
-        new CalculatedBlockVar(ValueProp.Move).WithMultiplier((CardModel card, Creature? _) => card.Owner.Creature.GetPowerAmount<RecallingMemoryPower>() / 5)
+        new CalculatedBlockVar(ValueProp.Move).WithMultiplier((CardModel card, Creature _) => card.Owner.Creature.GetPowerAmount<RecallingMemoryPower>() / 5)
     ];
 
     protected override IEnumerable<IHoverTip> AdditionalHoverTips => [
